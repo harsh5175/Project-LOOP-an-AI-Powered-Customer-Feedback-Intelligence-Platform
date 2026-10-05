@@ -1,0 +1,22 @@
+{
+  "name": "Project LOOP — AI Customer-Feedback Intelligence",
+  "short_name": "LOOP",
+  "description": "Enterprise AI platform to ingest, classify, cluster, and analyze multi-channel customer feedback with role-based access control and grounded intelligence.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070a13",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

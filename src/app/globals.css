@@ -1,0 +1,391 @@
+@import "tailwindcss";
+
+:root {
+  --background: #080c17;
+  --foreground: #f8fafc;
+  --card-bg: rgba(15, 23, 42, 0.72);
+  --card-border: rgba(99, 102, 241, 0.14);
+  --card-border-hover: rgba(99, 102, 241, 0.35);
+  --sidebar-bg: #090d1a;
+  --header-bg: rgba(8, 12, 23, 0.92);
+  --accent-primary: #6366f1;
+  --accent-primary-hover: #4f46e5;
+  --accent-glow: rgba(99, 102, 241, 0.25);
+  
+  --pill-bg: rgba(15, 23, 42, 0.6);
+  --pill-border: rgba(255, 255, 255, 0.08);
+  --pill-active-bg: #6366f1;
+  --pill-active-glow: rgba(99, 102, 241, 0.35);
+  
+  --sentiment-pos: #10b981;
+  --sentiment-pos-bg: rgba(16, 185, 129, 0.12);
+  --sentiment-pos-border: rgba(16, 185, 129, 0.25);
+  
+  --sentiment-neu: #f59e0b;
+  --sentiment-neu-bg: rgba(245, 158, 11, 0.12);
+  --sentiment-neu-border: rgba(245, 158, 11, 0.25);
+  
+  --sentiment-neg: #fb7185;
+  --sentiment-neg-bg: rgba(251, 113, 133, 0.12);
+  --sentiment-neg-border: rgba(251, 113, 133, 0.25);
+}
+
+/* 🌌 Theme 1: Midnight Indigo (Default Cosmic Glow) */
+html.theme-midnight, body.theme-midnight {
+  --background: #070a13;
+  --foreground: #f8fafc;
+  --card-bg: rgba(15, 23, 42, 0.72);
+  --card-border: rgba(99, 102, 241, 0.14);
+  --card-border-hover: rgba(99, 102, 241, 0.4);
+  --sidebar-bg: #090d1a;
+  --header-bg: rgba(7, 10, 19, 0.94);
+  --accent-primary: #6366f1;
+  --accent-primary-hover: #4f46e5;
+  --accent-glow: rgba(99, 102, 241, 0.25);
+  --pill-bg: rgba(15, 23, 42, 0.7);
+  --pill-border: rgba(99, 102, 241, 0.15);
+  --pill-active-bg: #6366f1;
+  --pill-active-glow: rgba(99, 102, 241, 0.35);
+}
+
+/* 🖤 Theme 2: Obsidian Slate (Linear / Vercel Minimalist Carbon) */
+html.theme-obsidian, body.theme-obsidian {
+  --background: #08090c;
+  --foreground: #f4f4f5;
+  --card-bg: rgba(18, 20, 26, 0.85);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-border-hover: rgba(56, 189, 248, 0.4);
+  --sidebar-bg: #0b0d12;
+  --header-bg: rgba(8, 9, 12, 0.95);
+  --accent-primary: #38bdf8;
+  --accent-primary-hover: #0ea5e9;
+  --accent-glow: rgba(56, 189, 248, 0.22);
+  --pill-bg: rgba(18, 20, 26, 0.8);
+  --pill-border: rgba(255, 255, 255, 0.09);
+  --pill-active-bg: #0284c7;
+  --pill-active-glow: rgba(56, 189, 248, 0.35);
+}
+
+/* 🌲 Theme 3: Cyber Emerald (FinTech Matrix Dark) */
+html.theme-emerald, body.theme-emerald {
+  --background: #020a0b;
+  --foreground: #ecfdf5;
+  --card-bg: rgba(5, 22, 24, 0.82);
+  --card-border: rgba(16, 185, 129, 0.15);
+  --card-border-hover: rgba(16, 185, 129, 0.45);
+  --sidebar-bg: #041113;
+  --header-bg: rgba(2, 10, 11, 0.95);
+  --accent-primary: #10b981;
+  --accent-primary-hover: #059669;
+  --accent-glow: rgba(16, 185, 129, 0.25);
+  --pill-bg: rgba(5, 22, 24, 0.8);
+  --pill-border: rgba(16, 185, 129, 0.16);
+  --pill-active-bg: #059669;
+  --pill-active-glow: rgba(16, 185, 129, 0.35);
+}
+
+/* 🔮 Theme 4: Royal Amethyst (Luxury Violet Glow) */
+html.theme-royal, body.theme-royal {
+  --background: #0a0612;
+  --foreground: #faf5ff;
+  --card-bg: rgba(22, 13, 34, 0.85);
+  --card-border: rgba(168, 85, 247, 0.16);
+  --card-border-hover: rgba(168, 85, 247, 0.45);
+  --sidebar-bg: #0d0817;
+  --header-bg: rgba(10, 6, 18, 0.95);
+  --accent-primary: #a855f7;
+  --accent-primary-hover: #9333ea;
+  --accent-glow: rgba(168, 85, 247, 0.28);
+  --pill-bg: rgba(22, 13, 34, 0.8);
+  --pill-border: rgba(168, 85, 247, 0.18);
+  --pill-active-bg: #9333ea;
+  --pill-active-glow: rgba(168, 85, 247, 0.4);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.35);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.55);
+}
+
+/* Glassmorphic utilities */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--card-border);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.25s ease;
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: var(--card-border-hover);
+  box-shadow: 0 12px 36px -8px var(--accent-glow);
+  transform: translateY(-1.5px);
+}
+
+/* Glowing Indigo Button Utility */
+.btn-glow-indigo {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #7c3aed 100%);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 8px 24px -4px rgba(99, 102, 241, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-glow-indigo:hover {
+  box-shadow: 0 12px 30px -4px rgba(99, 102, 241, 0.6), inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-glow-indigo:active {
+  transform: scale(0.97);
+}
+
+/* Shimmer beam animation */
+@keyframes shimmerSweep {
+  0% { transform: translateX(-150%); }
+  100% { transform: translateX(150%); }
+}
+
+.animate-shimmer {
+  animation: shimmerSweep 3s infinite ease-in-out;
+}
+
+/* Gradient accents */
+.gradient-text {
+  background: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Pulse animation for live indicators */
+@keyframes softPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.08); }
+}
+
+.animate-pulse-soft {
+  animation: softPulse 2.5s infinite ease-in-out;
+}
+
+/* ========================================================
+   VengeanceUI Component Styles (FlipText, SpotlightNav, GlassDock)
+   ======================================================== */
+
+/* FlipText Styles & 3D Perspective Keyframes */
+.flip-text-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.flip-char {
+  color: inherit;
+  -webkit-text-fill-color: transparent;
+  height: 1.25em;
+  line-height: 1.25em;
+  vertical-align: middle;
+  animation: flip var(--flip-duration, 2.2s) var(--flip-delay, 0s) var(--flip-iteration, infinite) ease;
+}
+
+.flip-char::before,
+.flip-char::after {
+  color: inherit;
+  -webkit-text-fill-color: currentColor;
+  content: attr(data-char);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  animation: fade var(--flip-duration, 2.2s) var(--flip-delay, 0s) var(--flip-iteration, infinite) ease;
+}
+
+.flip-char::after {
+  transform: translate(-50%, -50%) translateZ(0.6em);
+}
+
+.flip-char::before {
+  transform: translate(-50%, -50%) rotateX(-90deg) translateZ(0.6em);
+  opacity: 0;
+  --opacity: 1;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  25%, 100% {
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  30%, 100% {
+    opacity: var(--opacity, 0);
+  }
+}
+
+/* Spotlight Navbar Styles */
+.spotlight-nav {
+  --spotlight-color: rgba(99, 102, 241, 0.18);
+  --ambience-color: rgba(99, 102, 241, 0.95);
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.spotlight-nav-bg {
+  background: rgba(12, 17, 34, 0.85);
+  backdrop-filter: blur(16px);
+}
+
+.glass-border {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.spotlight-nav-shadow {
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 0 25px -5px rgba(99, 102, 241, 0.2);
+}
+
+/* Glass Dock Styles */
+.glass-dock {
+  --tab-bar-home-scale: 0.7;
+  --tab-bar-home-opacity: 1;
+  --tab-bar-blog-scale: 0.7;
+  --tab-bar-blog-opacity: 1;
+  --tab-bar-marker-scale: 0.7;
+  --tab-bar-marker-opacity: 1;
+  --tab-bar-email-scale: 0.7;
+  --tab-bar-email-opacity: 1;
+  --tab-bar-linkedin-scale: 0.7;
+  --tab-bar-linkedin-opacity: 1;
+  --tab-bar-x-scale: 0.7;
+  --tab-bar-x-opacity: 1;
+  --tab-bar-github-scale: 0.7;
+  --tab-bar-github-opacity: 1;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.glass-dock button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #94a3b8;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.glass-dock button:hover,
+.glass-dock button.active {
+  color: #ffffff;
+}
+
+.glass-dock button svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+/* ========================================================
+   Live 3D Background Keyframes & Utilities
+   ======================================================== */
+
+@keyframes cyberGridScroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 60px;
+  }
+}
+
+.animate-cyber-grid {
+  animation: cyberGridScroll 1.8s linear infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-22px) rotate(4deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+@keyframes floatDelayed {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-28px) scale(1.08);
+  }
+}
+
+.animate-float-delayed {
+  animation: floatDelayed 9s ease-in-out infinite 2s;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(405deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 28s linear infinite;
+}
+
+
